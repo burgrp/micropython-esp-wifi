@@ -1,8 +1,6 @@
 from setuptools import setup
 
 setup(
-    name="",
-    version="0.1.0",
-    py_modules=["my_pipeline", ],
-    install_requires=["kedro"],
+    version="1.0.0",
+    py_modules=["esp-wifi", ],
 )
