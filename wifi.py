@@ -3,7 +3,7 @@ from machine import Pin
 import network
 
 
-def init(ssid, password, ledPin=2, ledLogic=False):
+def init(ssid, password, ledPin=2, ledLogic=True):
 
     pin = Pin(ledPin, Pin.OUT)
 
