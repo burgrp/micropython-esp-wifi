@@ -2,5 +2,5 @@ from setuptools import setup
 
 setup(
     version="1.0.0",
-    py_modules=["esp-wifi", ],
+    py_modules=["wifi"],
 )
