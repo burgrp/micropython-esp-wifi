@@ -1,6 +1,7 @@
-from machine import Timer
 from machine import Pin
 import network
+import virtual_timer
+from machine import Timer
 
 
 def init(ssid, password, ledPin=2, ledLogic=False):
@@ -22,13 +23,12 @@ def init(ssid, password, ledPin=2, ledLogic=False):
         if not connected:
             pin.value(not pin.value())
             if wlan.status() != network.STAT_CONNECTING:
-                print("Connecting to WiFi...")
+                print("Connecting to WiFi SSID", ssid)
                 wlan.connect(ssid, password)
 
     wlan = network.WLAN(network.STA_IF)
     wlan.active(True)
 
-    tim = Timer(-1)
-    tim.init(period=100, mode=Timer.PERIODIC, callback=lambda t: check())
+    virtual_timer.new().init(period=100, mode=Timer.PERIODIC, callback=lambda t: check())
 
 
